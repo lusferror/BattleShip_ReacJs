@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
+import { Link } from "react-router-dom";
+import { Context } from "../store/appContext";
 
 // These are the play buttons
 const Buttons = (props) => {
-
+    const {actions} = useContext(Context)
 
     return (
         <div className=''>
@@ -16,7 +18,7 @@ const Buttons = (props) => {
                 <button className='btn btn-primary w-100 mb-3' type='button' onClick={()=>props.endTurn()}>End Turn</button>
             </div>
             <div>
-                <button className='btn btn-success w-100 mb-3' type='button' onClick={()=>props.reset()}>Reset</button>
+                <Link to='/selecction'><button className='btn btn-success w-100 mb-3' type='button' onClick={()=>props.reset()}>Restar</button></Link>
             </div>
         </div>
     )
